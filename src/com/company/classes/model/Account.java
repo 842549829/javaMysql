@@ -1,6 +1,7 @@
 package com.company.classes.model;
 
 public class Account {
+
     private String Name;
 
     public String getName() {
