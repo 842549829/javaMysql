@@ -4,7 +4,9 @@ import java.sql.*;
 
 public final class ConnectionManager {
     public static final String driverName = "com.mysql.jdbc.Driver";
-    public static final String url = "jdbc:mysql://127.0.0.1:3306/t";
+    public static final String url = "jdbc:mysql://192.168.10.9:3306/db1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true";
+
+    //public static final String url = "jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true";
     public static final String user = "root";
     public static final String password = "admin";
 

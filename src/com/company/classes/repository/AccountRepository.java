@@ -42,10 +42,12 @@ public class AccountRepository extends BaseRepository implements IAccountReposit
         StringBuilder sql = new StringBuilder("SELECT * FROM Account ");
         if (condition.getName() != null) {
             sql.append(" WHERE Name = ? ");
-            this.addParameter(ParametersType.STRING, condition.getName());
         }
         sql.append(" ORDER BY Name LIMIT ?,?");
         this.getPreparedStatement(sql.toString());
+        if (condition.getName() != null) {
+            this.addParameter(ParametersType.STRING, condition.getName());
+        }
         this.addParameter(ParametersType.INT, condition.getPaging().getStartRows());
         this.addParameter(ParametersType.INT, condition.getPaging().getPageSize());
         ResultSet resultSet = this.executeQuery();

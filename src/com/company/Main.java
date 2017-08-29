@@ -16,8 +16,8 @@ public class Main {
         //get();
         //post();
         //json();
-        queryAll();
-        //queryPaging();
+        //queryAll();
+        queryPaging();
     }
 
     private static void json() {
@@ -63,6 +63,7 @@ public class Main {
             Paging paging = new Paging();
             paging.setPageSize(2);
             AccountCondition condition = new AccountCondition(paging);
+            //condition.setName("没有大");
             List<Account> accounts = AccountService.queryPaging(condition);
             for (Account item : accounts) {
                 System.out.println("Name:" + item.getName() + "  Value:" + item.getValue());
